@@ -62,4 +62,12 @@ public class cubeGenerator : MonoBehaviour
             this.span = this.offsetX + this.spaceX * n;
         }
     }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "CubeTag")
+        {
+            GetComponent<AudioSource>().volume = 0.2f;
+        }
+    }
 }
